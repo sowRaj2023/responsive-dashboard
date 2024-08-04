@@ -1,0 +1,27 @@
+/* src/components/Dashboard.css */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .chart-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+  
+  
+  
+  
+  
+  

@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
+import Dashboard from './components/Dashboard';
+import Settings from './components/Settings';
+import LoadingSpinner from './components/LoadingSpinner';
+import './styles/App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    darkMode: false,
+  };
+
+  toggleTheme = () => {
+    this.setState((prevState) => ({
+      darkMode: !prevState.darkMode,
+    }));
+  };
+
+  render() {
+    const { darkMode } = this.state;
+
+    return (
+      <Router>
+        <Header darkMode={darkMode} toggleTheme={this.toggleTheme} />
+        <Sidebar />
+        <main className={`main-content ${darkMode ? 'dark-mode' : ''}`}>
+          <React.Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              <Route path="/overview" element={<Dashboard />} />
+              <Route path="/analytics" element={<Dashboard />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/" element={<Dashboard />} />
+            </Routes>
+          </React.Suspense>
+        </main>
+        <Footer />
+      </Router>
+    );
+  }
 }
 
 export default App;
+
+
+

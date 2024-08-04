@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+Dashboard Application
+A responsive web application built with React.js that includes a dashboard with various widgets such as line charts, bar charts, pie charts, and recent activity feeds. The application supports light and dark modes and is designed to be fully responsive across different devices.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Table of Contents
+Features
+Technologies Used
+Setup and Installation
+Project Structure
+Usage
+Contributing
+License
+Features
+Dashboard Widgets: Line chart, bar chart, pie chart, and recent activity feed.
+Responsiveness: Fully responsive design using Flexbox and media queries.
+Light and Dark Modes: Toggle between light and dark themes.
+Error Handling: Proper error messages and loading states.
+Mock Data Integration: Uses mock data for demonstration purposes.
+Technologies Used
+React.js: Frontend framework
+Recharts: Chart library
+CSS: Styling and responsiveness
+React Router: Routing
+Axios: Data fetching
+Flexbox: Layout and responsiveness
+Media Queries: Mobile-first design
+Setup and Installation
+Clone the Repository
 
-## Available Scripts
+bash
+Copy code
+git clone <repository-url>
+cd <project-directory>
+Install Dependencies
 
-In the project directory, you can run:
+Make sure you have Node.js installed. Then run:
 
-### `npm start`
+bash
+Copy code
+npm install
+Start the Development Server
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+bash
+Copy code
+npm start
+The application will be running on http://localhost:3000.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Project Structure
+lua
+Copy code
+src/
+|-- components/
+|   |-- Header.js
+|   |-- Sidebar.js
+|   |-- Footer.js
+|   |-- Dashboard.js
+|   |-- BarChartWidget.js
+|   |-- LineChartWidget.js
+|   |-- PieChartWidget.js
+|   |-- RecentActivityFeed.js
+|   |-- LoadingSpinner.js
+|   |-- Widget.css
+|   |-- Header.css
+|   |-- Sidebar.css
+|   |-- Footer.css
+|   |-- Dashboard.css
+|   |-- LoadingSpinner.css
+|   |-- Settings.js
+|   |-- Settings.css
+|-- App.js
+|-- index.js
+|-- styles/
+|   |-- App.css
+|-- api/
+|   |-- mockData.js
+|-- hooks/
+|   |-- useTheme.js
+Usage
+Header: Contains the application title, profile, notifications, and theme toggle button.
+Sidebar: Navigation menu with links to different dashboard pages.
+Footer: Displays footer content.
+Dashboard: Main page displaying various widgets such as line charts, bar charts, pie charts, and recent activities.
+Widgets: Separate components for each type of chart and the recent activity feed.
+Settings: Form for updating user settings.
+Contributing
+Fork the Repository: Create your own fork of the repository on GitHub.
+Create a Branch: Create a new branch for your changes.
+Commit Changes: Commit your changes with descriptive messages.
+Push Changes: Push your changes to your forked repository.
+Create a Pull Request: Submit a pull request to the original repository.
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
