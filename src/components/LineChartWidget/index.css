@@ -1,0 +1,19 @@
+.line-chart-widget {
+    background-color: var(--widget-bg);
+    color: var(--text-color);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Ensure widget fits well in grid */
+    width: 100%; /* Full width within its container */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .line-chart-widget {
+        margin: 10px 0;
+    }
+}
+

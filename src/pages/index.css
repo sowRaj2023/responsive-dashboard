@@ -1,0 +1,59 @@
+/* General Dashboard Container */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px; /* Space between widgets */
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .dashboard {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* Widget Styling */
+.dashboard .widget {
+    flex: 1;
+    min-width: 300px; /* Minimum width of the widget */
+    height: 300px; /* Fixed height of the widget */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Specific Widget Classes */
+.line-chart-widget {
+    background-color: #f9f9f9;
+}
+
+.bar-chart-widget {
+    background-color: #f0f0f0;
+}
+
+.pie-chart-widget {
+    background-color: #f7f7f7;
+}
+
+.recent-activity-feed {
+    background-color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .dashboard .widget {
+        min-width: 100%; /* Full width on small screens */
+        height: auto; /* Adjust height based on content */
+    }
+}
+

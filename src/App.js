@@ -1,49 +1,46 @@
-// src/App.js
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import Footer from './components/Footer';
-import Dashboard from './components/Dashboard';
-import Settings from './components/Settings';
-import LoadingSpinner from './components/LoadingSpinner';
-import './styles/App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Sidebar from './components/Sidebar/Sidebar';
+import Footer from './components/Footer/Footer';
+import Dashboard from './pages/Dashboard';
+import Settings from './components/Settings/Settings';
+import './App.css';
 
-class App extends Component {
-  state = {
-    darkMode: false,
-  };
+const App = () => {
+    const [darkMode, setDarkMode] = useState(false);
 
-  toggleTheme = () => {
-    this.setState((prevState) => ({
-      darkMode: !prevState.darkMode,
-    }));
-  };
-
-  render() {
-    const { darkMode } = this.state;
+    const toggleDarkMode = () => {
+        setDarkMode(prevMode => !prevMode);
+    };
 
     return (
-      <Router>
-        <Header darkMode={darkMode} toggleTheme={this.toggleTheme} />
-        <Sidebar />
-        <main className={`main-content ${darkMode ? 'dark-mode' : ''}`}>
-          <React.Suspense fallback={<LoadingSpinner />}>
-            <Routes>
-              <Route path="/overview" element={<Dashboard />} />
-              <Route path="/analytics" element={<Dashboard />} />
-              <Route path="/settings" element={<Settings />} />
-              <Route path="/" element={<Dashboard />} />
-            </Routes>
-          </React.Suspense>
-        </main>
-        <Footer />
-      </Router>
+        <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+            <Router>
+                <div className="app-container">
+                    <Header />
+                    <Sidebar />
+                    <button className="theme-toggle" onClick={toggleDarkMode}>
+                        {darkMode ? 'Light Mode' : 'Dark Mode'}
+                    </button>
+                    <div className="main-content">
+                        <Routes>
+                            <Route path="/" element={<Dashboard />} />
+                            <Route path="/settings" element={<Settings />} />
+                        </Routes>
+                    </div>
+                    <Footer />
+                </div>
+            </Router>
+        </div>
     );
-  }
-}
+};
 
 export default App;
 
 
 
+
+
+
+ 

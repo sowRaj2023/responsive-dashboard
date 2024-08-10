@@ -1,0 +1,16 @@
+.bar-chart-widget {
+    background-color: var(--widget-bg);
+    color: var(--text-color);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .bar-chart-widget {
+        margin: 10px 0;
+    }
+}
+
