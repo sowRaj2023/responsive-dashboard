@@ -20,31 +20,26 @@ npm (v6 or higher) or Yarn
 Installation
 Clone the Repository
 
-bash
-Copy code
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 Install Dependencies
 
-bash
-Copy code
+
 npm install
 # or
 yarn install
 Run the Development Server
 
-bash
-Copy code
+
 npm start
 # or
 yarn start
-The application will be available at http://localhost:3000.
+The application will be available at http://localhost:3004.
 
 Build for Production
 Build the Application
 
-bash
-Copy code
+
 npm run build
 # or
 yarn build
@@ -53,14 +48,12 @@ The build output will be in the build directory.
 Running Tests
 Run Unit Tests
 
-bash
-Copy code
+
 npm test
 # or
 yarn test
 Folder Structure
-bash
-Copy code
+
 /src
   /components         # Reusable components
     /BarChartWidget
@@ -85,21 +78,17 @@ Fork the Repository
 
 Create a New Branch
 
-bash
-Copy code
 git checkout -b feature/your-feature
 Make Your Changes
 
 Commit Your Changes
 
-bash
-Copy code
+
 git add .
 git commit -m "Add feature"
 Push to Your Fork
 
-bash
-Copy code
+
 git push origin feature/your-feature
 Create a Pull Request
 
